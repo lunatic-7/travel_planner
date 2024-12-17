@@ -120,7 +120,7 @@ loading_container = st.empty()
 try:
     # Set API keys in environment variables
     os.environ["GROQ_API_KEY"] = groq_api_key
-    os.environ["SERPAPI_KEY"] = serpapi_key
+    os.environ["SERP_API_KEY"] = serpapi_key
 
     # Initialize travel agent with Groq Llama model and SerpAPI
     travel_agent = Agent(
@@ -130,6 +130,7 @@ try:
         instructions=[
             "You are a travel planning assistant using Groq Llama.",
             "Help users plan their trips by researching destinations, finding attractions, suggesting accommodations, and providing transportation options.",
+            "Give me relevant live Links of each places and hotels you provide by searching on internet (It's important)",
             "Always verify information is current before making recommendations."
         ],
         show_tool_calls=True,
